@@ -1,0 +1,16 @@
+{
+  "extends": "./omni-evolutions.json",
+  "type": "backend",
+  "framework": "express",
+  "rootDir": "./src/",
+  "entity": "/infra/typeorm/entities",
+  "migration": "/infra/typeorm/migrations",
+  "contract": "/dtos",
+  "repository": {
+    "interface": "/repositories",
+    "implementation": "/infra/typeorm/repositories"
+  },
+  "usecase": "/usecases",
+  "controller": "/infra/http/controllers",
+  "route": "/infra/http/routes"
+}

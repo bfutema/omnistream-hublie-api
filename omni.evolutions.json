@@ -1,0 +1,647 @@
+{
+  "config": {
+    "entities": [
+      {
+        "name": "accounts",
+        "module": "accounts",
+        "fields": [
+          {
+            "name": "username",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "name",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "email",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "email_confirmed",
+            "type": "boolean"
+          },
+          {
+            "name": "phone",
+            "type": "varchar",
+            "size": 30
+          },
+          {
+            "name": "password_hash",
+            "type": "text"
+          },
+          {
+            "name": "security_stamp",
+            "type": "text"
+          },
+          {
+            "name": "two_factor_enabled",
+            "type": "boolean"
+          },
+          {
+            "name": "lockout_enabled",
+            "type": "boolean"
+          },
+          {
+            "name": "lockout_expires",
+            "type": "date"
+          },
+          {
+            "name": "access_failed_count",
+            "type": "int"
+          },
+          {
+            "name": "account_enabled",
+            "type": "boolean"
+          },
+          {
+            "name": "profile_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "account_avatars",
+        "module": "accounts",
+        "fields": [
+          {
+            "name": "name",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "size",
+            "type": "int"
+          },
+          {
+            "name": "key",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "type": "text"
+          },
+          {
+            "name": "account_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "profiles",
+        "module": "accounts",
+        "fields": [
+          {
+            "name": "name",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "account_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "links",
+        "module": "accounts",
+        "fields": [
+          {
+            "name": "name",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "url",
+            "type": "text"
+          },
+          {
+            "name": "account_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "connections",
+        "module": "accounts",
+        "fields": [
+          {
+            "name": "accepted",
+            "type": "boolean"
+          },
+          {
+            "name": "blocked",
+            "type": "boolean"
+          },
+          {
+            "name": "invited_account_id",
+            "type": "int"
+          },
+          {
+            "name": "created_by",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "companies",
+        "module": "companies",
+        "fields": [
+          {
+            "name": "cnpj",
+            "type": "varchar",
+            "size": 18
+          },
+          {
+            "name": "corporate_name",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "fantasy_name",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "main_activity",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "account_id",
+            "type": "int"
+          },
+          {
+            "name": "address_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "addresses",
+        "module": "common",
+        "fields": [
+          {
+            "name": "country",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "state",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "city",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "neighborhood",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "complement",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "number",
+            "type": "varchar",
+            "size": 12
+          },
+          {
+            "name": "street",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "zip_code",
+            "type": "varchar",
+            "size": 12
+          }
+        ]
+      },
+      {
+        "name": "jobs_vacancies",
+        "module": "jobs_vacancies",
+        "fields": [
+          {
+            "name": "name",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "hiring_model",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "work_format",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "budget",
+            "type": "decimal"
+          },
+          {
+            "name": "expiration_date",
+            "type": "date"
+          },
+          {
+            "name": "is_afirmative",
+            "type": "boolean"
+          },
+          {
+            "name": "afirmative_group",
+            "type": "text"
+          },
+          {
+            "name": "description",
+            "type": "text"
+          },
+          {
+            "name": "company_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "job_vacancy_status",
+        "module": "jobs_vacancies",
+        "fields": [
+          {
+            "name": "name",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "alias",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "job_vacancy_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "job_vacancy_notes",
+        "module": "jobs_vacancies",
+        "fields": [
+          {
+            "name": "text",
+            "type": "text"
+          },
+          {
+            "name": "created_by",
+            "type": "int"
+          },
+          {
+            "name": "job_vacancy_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "curriculums",
+        "module": "accounts",
+        "fields": [
+          {
+            "name": "name",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "size",
+            "type": "int"
+          },
+          {
+            "name": "key",
+            "type": "text"
+          },
+          {
+            "name": "url",
+            "type": "text"
+          },
+          {
+            "name": "account_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "recruiters",
+        "module": "recruiters",
+        "fields": [
+          {
+            "name": "address_id",
+            "type": "int"
+          },
+          {
+            "name": "account_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "notifications",
+        "module": "common",
+        "fields": [
+          {
+            "name": "text",
+            "type": "text"
+          },
+          {
+            "name": "is_global",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "name": "tags",
+        "module": "common",
+        "fields": [
+          {
+            "name": "name",
+            "type": "varchar",
+            "size": 80
+          }
+        ]
+      },
+      {
+        "name": "evaluation_skills_recommendations",
+        "module": "common",
+        "fields": [
+          {
+            "name": "tag_id",
+            "type": "int"
+          },
+          {
+            "name": "account_id",
+            "type": "int"
+          },
+          {
+            "name": "evaluation_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "evaluations",
+        "module": "common",
+        "fields": [
+          {
+            "name": "worked_with",
+            "type": "boolean"
+          },
+          {
+            "name": "relation",
+            "type": "text"
+          },
+          {
+            "name": "recommendation",
+            "type": "text"
+          },
+          {
+            "name": "account_id",
+            "type": "int"
+          },
+          {
+            "name": "created_by",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "candidates",
+        "module": "candidates",
+        "fields": [
+          {
+            "name": "salary_expectation",
+            "type": "decimal"
+          },
+          {
+            "name": "preferred_hiring_model",
+            "type": "text"
+          },
+          {
+            "name": "preferred_work_model",
+            "type": "text"
+          },
+          {
+            "name": "address_id",
+            "type": "int"
+          },
+          {
+            "name": "account_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "professional_experiences",
+        "module": "candidates",
+        "fields": [
+          {
+            "name": "title",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "job_type",
+            "type": "text"
+          },
+          {
+            "name": "company_name",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "location",
+            "type": "varchar",
+            "size": 120
+          },
+          {
+            "name": "start_date_month",
+            "type": "int"
+          },
+          {
+            "name": "start_date_year",
+            "type": "int"
+          },
+          {
+            "name": "end_date_month",
+            "type": "int"
+          },
+          {
+            "name": "end_date_year",
+            "type": "int"
+          },
+          {
+            "name": "description",
+            "type": "text"
+          },
+          {
+            "name": "candidate_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "tests",
+        "module": "jobs_vacancies",
+        "fields": [
+          {
+            "name": "title",
+            "type": "varchar",
+            "size": 80
+          },
+          {
+            "name": "description",
+            "type": "text"
+          },
+          {
+            "name": "enabled",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "name": "test_questions",
+        "module": "jobs_vacancies",
+        "fields": [
+          {
+            "name": "question",
+            "type": "text"
+          },
+          {
+            "name": "test_id",
+            "type": "int"
+          },
+          {
+            "name": "order",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "test_question_alternatives",
+        "module": "jobs_vacancies",
+        "fields": [
+          {
+            "name": "alternative",
+            "type": "text"
+          },
+          {
+            "name": "test_question_id",
+            "type": "int"
+          },
+          {
+            "name": "order",
+            "type": "int"
+          },
+          {
+            "name": "is_correct",
+            "type": "boolean"
+          }
+        ]
+      },
+      {
+        "name": "test_candidate_answers",
+        "module": "jobs_vacancies",
+        "fields": [
+          {
+            "name": "test_alternative_id",
+            "type": "int"
+          },
+          {
+            "name": "answered_test_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "answered_tests",
+        "module": "jobs_vacancies",
+        "fields": [
+          {
+            "name": "test_id",
+            "type": "int"
+          },
+          {
+            "name": "candidate_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "associations__jobs_vacancies__tags",
+        "module": "associations",
+        "fields": [
+          {
+            "name": "tag_id",
+            "type": "int"
+          },
+          {
+            "name": "job_vacancy_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "associations__recruiters__jobs_vacancies",
+        "module": "associations",
+        "fields": [
+          {
+            "name": "job_vacancy_id",
+            "type": "int"
+          },
+          {
+            "name": "recruiter_id",
+            "type": "int"
+          }
+        ]
+      },
+      {
+        "name": "associations__notifications__accounts",
+        "module": "associations",
+        "fields": [
+          {
+            "name": "account_id",
+            "type": "int"
+          },
+          {
+            "name": "notification_id",
+            "type": "int"
+          },
+          {
+            "name": "read_at",
+            "type": "timestamp"
+          }
+        ]
+      },
+      {
+        "name": "associations__accounts__tags",
+        "module": "associations",
+        "fields": [
+          {
+            "name": "account_id",
+            "type": "int"
+          },
+          {
+            "name": "tag_id",
+            "type": "int"
+          }
+        ]
+      }
+    ],
+    "relations": []
+  }
+}
